@@ -1,0 +1,45 @@
+
+<p>
+<a [routerLink] = "['/dashboard']"> Go to Polls </a> 
+</p>
+
+
+<h3> {{currtopic[0]?.question | json}} </h3>
+<p>Click the Vote button to choose one</p>
+
+<div>
+  <table [ngStyle]="{
+  'border': '1px solid black'
+}">
+  <thead>
+   
+    <th>Option:</th>
+    <th>Current Count of Votes:</th>
+    <th>Action:Vote</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{currtopic[0]?.option1 | json}}</td>
+      <td>{{currtopic[0]?.vote1 | json}}</td>
+      <td><button (click)='vote1(currtopic[0]._id)'>Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{currtopic[0]?.option2 | json}}</td>
+      <td>{{currtopic[0]?.vote2 | json}}</td>
+      <td><button (click)='vote2(currtopic[0]._id)'>Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{currtopic[0]?.option3 | json}}</td>
+      <td>{{currtopic[0]?.vote3 | json}}</td>
+      <td><button (click)='vote3(currtopic[0]._id)'>Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{currtopic[0]?.option4 | json}}</td>
+      <td>{{currtopic[0]?.vote4 | json}}</td>
+      <td><button (click)='vote4(currtopic[0]._id)'>Vote</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+

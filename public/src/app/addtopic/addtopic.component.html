@@ -1,0 +1,65 @@
+
+    
+    <form #formTopic = 'ngForm' (submit)='create(formTopic)'>
+      <label for="question">Question:</label>
+      <input type="text" name="question" id = "question" value="" 
+      required
+      minlength = 8
+      [(ngModel)] = 'newtopic.question' 
+      #question = 'ngModel'>
+       <div *ngIf='question.errors && (question.touched || formTopic.submitted)'>
+          <small id = "red" *ngIf = "question.errors?.required">* Question is required</small><br>
+          <small id = "red" *ngIf = "question.errors?.minlength">* Question must be at least 8 characters long</small>
+      </div><br>
+
+       <label for="option1">Option 1:</label>
+      <input type="text" name="option1" id = "option1" value="" 
+      required
+      minlength = 3
+      [(ngModel)] = 'newtopic.option1' 
+      #option1 = 'ngModel'>
+       <div *ngIf='option1.errors && (option1.touched || formTopic.submitted)'>
+          <small id = "red" *ngIf = "option1.errors?.required">* Option 1 is required</small><br>
+          <small id = "red" *ngIf = "option1.errors?.minlength">* Option 1 must be at least 3 characters long</small>
+      </div><br>
+
+        <label for="option2">Option 2:</label>
+      <input type="text" name="option2" id = "option2" value="" 
+      required
+      minlength = 3
+      [(ngModel)] = 'newtopic.option2' 
+      #option2 = 'ngModel'>
+       <div *ngIf='option2.errors && (option2.touched || formTopic.submitted)'>
+          <small id = "red" *ngIf = "option2.errors?.required">* Option 2 is required</small><br>
+          <small id = "red" *ngIf = "option2.errors?.minlength">* Option 2 must be at least 3 characters long</small>
+      </div><br>
+
+      <label for="option3">Option 3:</label>
+      <input type="text" name="option3" id = "option3" value="" 
+      required
+      minlength = 3
+      [(ngModel)] = 'newtopic.option3' 
+      #option3 = 'ngModel'>
+       <div *ngIf='option3.errors && (option3.touched || formTopic.submitted)'>
+          <small id = "red" *ngIf = "option3.errors?.required">* Option 3 is required</small><br>
+          <small id = "red" *ngIf = "option3.errors?.minlength">* Option 3 must be at least 3 characters long</small>
+      </div><br>
+
+      <label for="option4">Option 4:</label>
+      <input type="text" name="option4" id = "option4" value="" 
+      required
+      minlength = 3
+      [(ngModel)] = 'newtopic.option4' 
+      #option4 = 'ngModel'>
+       <div *ngIf='option4.errors && (option4.touched || formTopic.submitted)'>
+          <small id = "red" *ngIf = "option4.errors?.required">* Option 4 is required</small><br>
+          <small id = "red" *ngIf = "option4.errors?.minlength">* Option 4 must be at least 3 characters long</small>
+      </div><br>
+      
+         <button class = "col s2 offset-s10" type="submit" [disabled] = "!formTopic.form.valid" name="submit" value="Add Topic" class = "waves-effect waves-light btn green">Add Topic </button>
+      
+    </form>
+
+    
+  
+ 
